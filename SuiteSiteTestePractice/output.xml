@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200727 10:23:47.000" generator="Robot 3.2.1 (Python 2.7.14 on win32)">
+<suite source="C:\projetos\SuiteSiteTestePractice\tests" id="s1" name="Tests">
+<suite source="C:\projetos\SuiteSiteTestePractice\tests\TestSitePracticeProcedural.robot" id="s1-s1" name="TestSitePracticeProcedural">
+<test id="s1-s1-t1" name="Caso de Teste 02: Pesquisa produto não existente:">
+<kw type="setup" name="Abrir navegador" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200727 10:23:47.179" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200727 10:23:49.441" starttime="20200727 10:23:47.179"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:49.442" starttime="20200727 10:23:47.178"></status>
+</kw>
+<kw name="Acessar a página home do site" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200727 10:23:49.443" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20200727 10:23:54.982" starttime="20200727 10:23:49.443"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200727 10:23:54.987" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20200727 10:23:54.987" starttime="20200727 10:23:54.982"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:54.988" starttime="20200727 10:23:49.442"></status>
+</kw>
+<kw name="Digitar o nome do produto &quot;produtoNaoExistente&quot; no campo de Pesquisa" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=search_query</arg>
+<arg>${PRODUTO}</arg>
+</arguments>
+<msg timestamp="20200727 10:23:54.989" level="INFO">Typing text 'produtoNaoExistente' into text field 'name=search_query'.</msg>
+<status status="PASS" endtime="20200727 10:23:55.138" starttime="20200727 10:23:54.988"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:55.138" starttime="20200727 10:23:54.988"></status>
+</kw>
+<kw name="Clicar no botão Pesquisar" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>name=submit_search</arg>
+</arguments>
+<msg timestamp="20200727 10:23:55.139" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" endtime="20200727 10:23:56.361" starttime="20200727 10:23:55.139"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:56.361" starttime="20200727 10:23:55.138"></status>
+</kw>
+<kw name="Conferir a mensagem de erro &quot;No results were found for your search &quot;produtoNaoExistente&quot;&quot;" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//*[@id="center_column"]/p[@class="alert alert-warning"]</arg>
+</arguments>
+<status status="PASS" endtime="20200727 10:23:56.484" starttime="20200727 10:23:56.363"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>//*[@id="center_column"]/p[@class="alert alert-warning"]</arg>
+<arg>${MENSAGEM_ALERTA}</arg>
+</arguments>
+<msg timestamp="20200727 10:23:56.484" level="INFO">Verifying element '//*[@id="center_column"]/p[@class="alert alert-warning"]' contains exact text 'No results were found for your search "produtoNaoExistente"'.</msg>
+<status status="PASS" endtime="20200727 10:23:56.501" starttime="20200727 10:23:56.484"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:56.502" starttime="20200727 10:23:56.362"></status>
+</kw>
+<status status="PASS" endtime="20200727 10:23:56.502" critical="yes" starttime="20200727 10:23:47.177"></status>
+</test>
+<status status="PASS" endtime="20200727 10:23:56.503" starttime="20200727 10:23:47.028"></status>
+</suite>
+<status status="PASS" endtime="20200727 10:23:56.505" starttime="20200727 10:23:47.003"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+<stat fail="0" id="s1-s1" name="TestSitePracticeProcedural" pass="1">Tests.TestSitePracticeProcedural</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
